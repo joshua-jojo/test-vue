@@ -2,6 +2,7 @@ import { createWebHistory,createRouter } from "vue-router";
 
 import dashboard from '../pages/dashboard.vue'
 import menulist from '../pages/menu.vue'
+import login from '../pages/login.vue'
 import notfound from '../components/notfound.vue'
 
 const routes = [
@@ -17,6 +18,11 @@ const routes = [
         path : '/menu-list',
         name : 'menu-list',
         component : menulist,
+    },
+    {
+        path : '/login',
+        name : 'Login',
+        component : login,
     },
     {
         path : '/:pathMatch(.*)*',
