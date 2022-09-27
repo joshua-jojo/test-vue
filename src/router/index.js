@@ -7,7 +7,6 @@ import notfound from '../components/notfound.vue'
 const routes = [
     {
         path : '/',
-        component : dashboard,
     },
     {
         path : '/dashboard',
@@ -31,4 +30,17 @@ const router = createRouter({
     routes
 })
 
+router.beforeEach((to,from,next) => {
+    if(to.path == '/') {
+        next({name : 'Dashboard'})
+    }
+    if(to.path == '/menu-list') {
+        next({name : 'Dashboard'})
+        alert('akses ditolak, sekarang ip anda telah kami deteksi')
+    }
+    else{
+        next()
+    }
+    
+})
 export default router;
